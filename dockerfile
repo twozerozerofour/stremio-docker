@@ -1,8 +1,5 @@
-# Usa la imagen base oficial de Stremio
-FROM stremio/server:v4.20.11
+# Usa la imagen optimizada con Nginx y utilidades de transcoding
+FROM tsaridas/stremio-docker:latest
 
-# Expón los puertos que vamos a usar
-EXPOSE 11470 12470
-
-# Inicia el servidor Stremio
-CMD ["node", "server.js"]
+# Expone el puerto nativo esperado por Hugging Face
+EXPOSE 7860
